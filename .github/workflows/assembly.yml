@@ -169,12 +169,13 @@ jobs:
           echo "Motorbike tests passed!"
 
   test_truck:
+    needs: build_truck
     runs-on: ubuntu-latest
     steps:
       - name: Download truck artifact
         uses: actions/download-artifact@v7
         with:
-          name: truck-output
+          name: truck-files
           path: build/
 
       - name: Test truck
