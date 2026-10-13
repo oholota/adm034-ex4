@@ -125,6 +125,9 @@ jobs:
   build_truck:
     needs: start
     runs-on: ubuntu-latest
+    env:
+      ASSEMBLY_PLANT: "Factory B"
+
     steps:
       - name: Print assembly plant
         run: |
