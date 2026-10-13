@@ -61,6 +61,10 @@ jobs:
     runs-on: ubuntu-latest
     container: ubuntu:22.04
     steps:
+      - name: Print assembly plant
+        run: |
+          echo "Assembling at: $ASSEMBLY_PLANT"
+
       - name: Assemble car
         run: |
           mkdir -p build
@@ -89,6 +93,10 @@ jobs:
     needs: start
     runs-on: ubuntu-latest
     steps:
+      - name: Print assembly plant
+        run: |
+          echo "Assembling at: $ASSEMBLY_PLANT"
+          
       - name: Assemble motorbike
         run: |
           mkdir -p build
@@ -118,6 +126,10 @@ jobs:
     needs: start
     runs-on: ubuntu-latest
     steps:
+      - name: Print assembly plant
+        run: |
+          echo "Assembling at: $ASSEMBLY_PLANT"
+          
       - name: Assemble truck
         run: |
           mkdir -p build
