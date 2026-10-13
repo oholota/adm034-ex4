@@ -44,8 +44,13 @@ jobs:
         run: |
           echo "Manual run: deploying $VEHICLE to $ENVIRONMENT"
 
-      - name: Dump github context
-        run: echo '${{ toJSON(github) }}'
+      - name: Authenticate deployment
+        env:
+          TOKEN: ${{ secrets.DEPLOY_TOKEN }}
+        run: |
+          echo "Authenticating with token: $TOKEN"
+          echo "Token length: ${#TOKEN}"
+
 
 
   build_car:
